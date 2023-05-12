@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      window.onerror = function (msg, url, lineNo, columnNo, error) {
+        console.log(error, "error");
+        console.log(url, "url");
+        console.log(lineNo, "lineNo");
+        console.log(columnNo, "columnNo");
+        console.log(error, "error");
+      };
+      // 1.EvalError
+      // throw new EvalError("Hello", "someFile.js", 10);
+      // 2.InternalError
+      //   function loop(x) {
+      //     if (x >= 1000000000000) return;
+
+      //     // 做一些事情
+      //     loop(x + 1);
+      //   }
+      //   loop(0);
+      // 3.RangeError
+      //   function check(n) {
+      //     if (!(n >= -500 && n <= 500)) {
+      //       throw new RangeError("The argument must be between -500 and 500.");
+      //     }
+      //   }
+      // check(2000);
+      // 4. ReferenceError
+      //  add();
+      // 5. SyntaxError
+      // let name = 'Jartto;
+      // const data = JSON.parse('')
+      // 6. TypeError
+      //   null.f()
+      // 7. URIError
+      // decodeURIComponent('%')
+      // 8. 异步的错误
+      // setTimeout(() => {
+      //   throw new Error("异步错误");
+      // }, 0);
+      // 9. promise错误
+      //   new Promise((revolve, reject) => {
+      //     throw new Error("Promise 异常错误");
+      //   });
+      //   async function fn() {
+      //       await new Promise((revolve, reject) => {
+      //         throw new Error("Promise 异常错误");
+      //       })
+      //   }
+      //   fn();
+      // 10. 网络请求
+      fetch("http://example.com/movies.json")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    </script>
+    <!-- 11.资源请求 -->
+    <!-- <img src="https://baidu.com/qpi/01.png" alt="" srcset="" /> -->
+  </body>
+</html>

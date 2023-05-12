@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function errorHandler(error) {
+        //   console.log("捕获到静态资源加载异常", error);
+        // }
+    window.addEventListener('error', (error) => {
+      error.preventDefault()
+      console.log('捕获到异常：', error);
+    }, true)
+  </script>
+      </script>
+      <script src="http://cdn.xxx.com/js/test.js"></script>
+      <link rel="stylesheet" href="http://cdn.xxx.com/styles/test.css">
+</body>
+</html>

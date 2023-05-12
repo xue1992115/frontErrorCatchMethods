@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. catch捕获
+      // new Promise((revolve, reject) => {
+      //   throw new Error("Promise 异常错误");
+      // }).catch((error) => {
+      //   console.log("捕获到错误error", error);
+      // });
+      // 2. try catch
+      // async function fn() {
+      //   try {
+      //     await new Promise((revolve, reject) => {
+      //       throw new Error("Promise 异常错误");
+      //     });
+      //   } catch (error) {
+      //     console.log(`捕获到的错误：${error}`);
+      //   }
+      // }
+      // fn();
+      // 3. 全局监听unhandledrejection
+      window.addEventListener("unhandledrejection", function (e) {
+        event.preventDefault();
+        console.log(e);
+      });
+      new Promise((revolve, reject) => {
+        throw new Error("Promise 异常错误");
+      });
+    </script>
+  </body>
+</html>
